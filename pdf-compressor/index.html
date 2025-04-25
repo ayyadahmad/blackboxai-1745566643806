@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Compressor - Reduce PDF Size by 50% While Maintaining Quality</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+        }
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'bounce-slow': 'bounce 3s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600">PDF Compressor</span>
+                </div>
+                <div class="hidden sm:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 transition-all">Features</a>
+                    <a href="#pricing" class="text-gray-700 hover:text-blue-600 transition-all">Pricing</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 transition-all">Testimonials</a>
+                    <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all">Try for Free</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-br from-blue-600 to-indigo-600 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex items-center justify-between">
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Compress PDFs by up to 50% Without Losing Quality
+                    </h1>
+                    <p class="text-xl text-blue-100 mb-8">
+                        Professional PDF compression for businesses, students, and individuals.<br>
+                        Save storage space and share files easily.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+                            Start Compressing
+                        </a>
+                        <a href="#features" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center">
+                    <div class="relative w-80 h-80 animate-bounce-slow">
+                        <div class="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-3xl transform rotate-6"></div>
+                        <div class="absolute inset-0 bg-white/10 backdrop-blur-lg rounded-3xl transform -rotate-6"></div>
+                        <div class="relative bg-white/20 backdrop-blur-lg rounded-3xl p-8 flex items-center justify-center">
+                            <i class="fas fa-file-pdf text-9xl text-white/80"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <p class="text-4xl font-bold text-blue-600 mb-2">1M+</p>
+                    <p class="text-gray-600">Files Compressed</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-4xl font-bold text-blue-600 mb-2">50%</p>
+                    <p class="text-gray-600">Average Reduction</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-4xl font-bold text-blue-600 mb-2">100K+</p>
+                    <p class="text-gray-600">Happy Users</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-4xl font-bold text-blue-600 mb-2">99.9%</p>
+                    <p class="text-gray-600">Uptime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Why Choose Our PDF Compressor?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-compress text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Smart Compression</h3>
+                    <p class="text-gray-600">Advanced algorithms reduce file size by 30-50% while maintaining document quality.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Secure Processing</h3>
+                    <p class="text-gray-600">Your files are processed securely and deleted automatically after compression.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Fast & Easy</h3>
+                    <p class="text-gray-600">Compress PDFs in seconds with our user-friendly interface. No technical skills required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">What Our Users Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">Marketing Manager</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"This tool has been a game-changer for our team. We can now easily share large PDF presentations without compromising quality."</p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"Perfect for submitting assignments! I can compress my research papers without losing any quality or formatting."</p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-semibold">Emily Davis</h4>
+                            <p class="text-gray-600 text-sm">Small Business Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"The batch processing feature saves me hours every week. Customer documents are now much easier to manage."</p>
+                    <div class="mt-4 flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Simple, Transparent Pricing</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Free Plan -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border-2 border-gray-100 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-4">Free</h3>
+                    <p class="text-4xl font-bold mb-6">$0<span class="text-lg text-gray-600 font-normal">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Up to 5 files per day</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Max 5MB per file</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Basic compression</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-gray-100 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-all">Start Free</a>
+                </div>
+                <!-- Premium Plan -->
+                <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-blue-600 transform scale-105 hover:-translate-y-1 transition-all relative">
+                    <div class="absolute top-0 right-0 bg-blue-600 text-white px-3 py-1 rounded-bl-lg rounded-tr-lg text-sm">Popular</div>
+                    <h3 class="text-xl font-semibold mb-4">Premium</h3>
+                    <p class="text-4xl font-bold mb-6">$4.99<span class="text-lg text-gray-600 font-normal">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Unlimited files</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Up to 10MB per file</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Advanced compression</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Priority support</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all">Get Started</a>
+                </div>
+                <!-- Pro Plan -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border-2 border-gray-100 hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <h3 class="text-xl font-semibold mb-4">Pro</h3>
+                    <p class="text-4xl font-bold mb-6">$9.99<span class="text-lg text-gray-600 font-normal">/month</span></p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Everything in Premium</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> API access</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Batch processing</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Custom integration</li>
+                    </ul>
+                    <a href="#" class="block text-center bg-gray-100 text-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-all">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-indigo-600 to-blue-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-8">Ready to optimize your PDFs?</h2>
+            <p class="text-xl text-blue-100 mb-8">Join thousands of satisfied users who trust our PDF compression technology.</p>
+            <a href="#" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all transform hover:scale-105">
+                Start Your Free Trial
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">PDF Compressor</h4>
+                    <p class="text-sm">Professional PDF compression solution for businesses and individuals.</p>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-all">Features</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">API</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-all">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white transition-all">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-all">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center">
+                <p>&copy; 2024 PDF Compressor. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
