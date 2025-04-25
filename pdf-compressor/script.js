@@ -85,57 +85,30 @@ document.addEventListener('DOMContentLoaded', function() {
             const arrayBuffer = await file.arrayBuffer();
             updateProgress(20);
             
-            // Load the PDF document
-            const pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer);
-            updateProgress(30);
+            // Load the PDF document with error handling for password protection
+            let pdfDoc;
+            try {
+                pdfDoc = await PDFLib.PDFDocument.load(arrayBuffer, { ignoreEncryption: false });
+            } catch (err) {
+                if (err.message && err.message.toLowerCase().includes('encrypted')) {
+                    throw new Error('The PDF is password protected. Please upload an unprotected file.');
+                } else {
+                    throw err;
+                }
+            }
+            updateProgress(50);
 
             // Create a new document
             const compressedPdf = await PDFLib.PDFDocument.create();
-            updateProgress(40);
+            updateProgress(60);
 
             // Copy pages from original to new document
             const pages = await compressedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
-            updateProgress(50);
+            updateProgress(70);
 
-            // Process each page
-            for (let i = 0; i < pages.length; i++) {
-                const page = pages[i];
-                compressedPdf.addPage(page);
-
-                // Get page dimensions
-                const { width, height } = page.getSize();
-
-                // Get all images on the page
-                const imageObjects = await page.getImages();
-                
-                // Process each image
-                for (const imageObj of imageObjects) {
-                    try {
-                        // Extract image
-                        const image = await pdfDoc.getImage(imageObj);
-                        
-                        // Get image dimensions
-                        const imageDims = image.size();
-                        
-                        // Compress by reducing quality and dimensions
-                        const jpgImage = await compressedPdf.embedJpg(await image.getBytes());
-                        
-                        // Draw compressed image
-                        page.drawImage(jpgImage, {
-                            x: 0,
-                            y: 0,
-                            width: imageDims.width * 0.8, // Reduce size by 20%
-                            height: imageDims.height * 0.8,
-                            opacity: 0.9 // Slight reduction in quality
-                        });
-                    } catch (err) {
-                        console.warn('Error processing image:', err);
-                        continue;
-                    }
-                }
-
-                updateProgress(50 + Math.floor((i / pages.length) * 40));
-            }
+            // Add pages to new document
+            pages.forEach(page => compressedPdf.addPage(page));
+            updateProgress(85);
 
             // Save with compression options
             const compressedPdfBytes = await compressedPdf.save({
@@ -188,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
         } catch (error) {
             console.error('Error compressing PDF:', error);
-            alert('Error compressing PDF. Please make sure the file is not corrupted or password protected.');
+            alert(error.message || 'Error compressing PDF. Please make sure the file is not corrupted or password protected.');
             document.getElementById('progress-section').classList.add('hidden');
             resultSection.classList.add('hidden');
         }
